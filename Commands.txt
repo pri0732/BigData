@@ -1,0 +1,91 @@
+COMMANDS USED TO RUN CODE FULLY DISTRIBUTED NODE FOR AIRLINES DATASET
+
+STEP1: SETTING UP THE OOZIE MACHINE
+
+->Launch an instance in Amazon AWS with the given specifications in the instructions.
+
+
+
+->Check java version by giving command 
+    "java -versionÓ.
+
+-> update and install:
+sudo apt-get update
+sudo apt-get -y install oracle-java7-installer
+sudo update-alternatives --config java
+
+->Install maven having latest version of apache maven 3.3.3 and unzip it using "tar -zxvf  apache-maven-3.3.3.tar.gz"
+sudo apt-get -y install maven
+$ mvn -v->
+
+->Install hadoop having latest version of hadoop-2.7.1 
+cp ~/hadoop-2.7.1-src/hadoop-dist/target/hadoop-2.7.1.tar.gz ~/
+tar -zxvf hadoop-2.7.1.tar.gz
+cd ~/hadoop-2.7.1
+
+->Configure HDFS, YARM as specified in instructions
+
+->Install oozie having latest version of oozie-4.3.0 and unzip it using "tar -zxvf oozie-4.3.0.tar.gz"
+$ wget http://apache.claz.org/oozie/4.3.0/oozie-4.3.0.tar.gz
+$ tar -zxvf oozie-4.3.0.tar.gz
+$ cd ~/oozie-4.3.0
+
+->Test hadoop installation
+sudo su hdp
+cd /home/hadoop-0.20.2
+bin/hadoop
+
+->create an image of the machine launched above which will act as the slave machines
+--) Copy all these configurations settings to slaves node 
+scp hadoop-env.sh core-site.xml hdfs-site.xml mapred-site.xml.template ubuntu@public dns:/home/ubuntu/hadoop/etc/hadoop
+
+->Add .pem file to every instance to "/home/ubuntuÓ directly.
+
+
+
+STEP 2: COMMANDS TO BUILD AND RUN OOZIE
+->To build oozie
+bin/mkdistro.sh -DskipTests -DtargetJavaVersion=1.7 -Puber -Phadoop-2 -Dhadoop.version=2.7.1 -Dhadoop.auth.version=2.7.1 -Ddistcp.version=2.7.1
+
+-> new folder created in oozie for storing oozie related files and operations
+cp -R oozie-4.1.0/distro/target/oozie-4.1.0-distro/oozie-4.1.0/ oozie
+
+
+->Create sharelib on HDFS by command to set up setting CATALINA_OPTS="$CATALINA_OPTS -Xmx1024m"
+./bin/oozie-setup.sh sharelib create -fs hdfs://localhost:11000
+the destination path for sharelib is: /Priya/hduser/share/lib
+
+->check the oozie status
+./bin/oozie admin -oozie http://localhost:11000/oozie -status
+
+->start oozie
+./bin/oozied.sh start
+
+->run oozie:
+./bin/oozied.sh run"
+
+STEP 3: RUN MASTER AND SLAVE NODES IN FULLY DISTRIBUTE MODE: 
+
+->format name and data nodes
+hdfs namenode -format
+hdfs datanode -format
+
+->to show namenode and datanode running on instance
+cd hadoop
+sbin/start-dfs.sh
+jps
+
+->uploading the input data file 
+hdfs dfs -mkdir /user 
+hdfs dfs -mkdir /user/ubuntu
+hdfs dfs -put input input1
+
+->Run hadoop 
+jar airlines.jar airlines.controller input output"
+
+->check output file:
+Hadoop fs ~cat output/part-r-00000
+
+
+
+

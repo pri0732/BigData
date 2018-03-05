@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow-app xmlns="uri:oozie:workflow:0.2" name="flightDataWorkflow-wf">
+   <start to=“Map-Reduce1” />
+
+<action name="Map-Reduce1">
+      <map-reduce>
+         <job-tracker>${jobTracker}</job-tracker>
+         <name-node>${nameNode}</name-node>
+         <prepare>
+            <delete path="${nameNode}/user/${wf:user()}/output-data/${outputDir}" />
+         </prepare>
+         <configuration>
+            <property>
+               <name>mapred.mapper.new-api</name>
+               <value>true</value>
+            </property>
+            <property>
+               <name>mapred.reducer.new-api</name>
+               <value>true</value>
+            </property>
+            <property>
+               <name>mapred.job.queue.name</name>
+               <value>default</value>
+            </property>
+            <property>
+               <name>mapreduce.map.class</name>
+               <value>ProbabilityMapper</value>
+            </property>
+            <property>
+               <name>mapreduce.reduce.class</name>
+               <value>ProbabilityReducer</value>
+            </property>
+            <property>
+               <name>mapred.output.key.class</name>
+               <value>org.apache.hadoop.io.Text</value>
+            </property>
+            <property>
+               <name>mapred.output.value.class</name>
+               <value>org.apache.hadoop.io.IntWritable</value>
+            </property>
+            <property>
+               <name>mapred.map.tasks</name>
+               <value>1</value>
+            </property>	
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1987.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1988.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1989.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>			
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1990.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1991.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1992.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1993.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1994.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1995.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1996.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1997.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1998.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1999.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2000.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2001.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2002.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2003.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2004.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2005.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2006.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2007.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>								
+		</configuration>
+      </map-reduce>
+      <ok to=“Map-Reduce2” />
+      <error to="fail" />
+   </action>
+   
+
+<action name=“Map-Reduce2”>
+      <map-reduce>
+         <job-tracker>${jobTracker}</job-tracker>
+         <name-node>${nameNode}</name-node>
+         <prepare>
+            <delete path="${nameNode}/user/${wf:user()}/output-data/${outputDir}" />
+         </prepare>
+         <configuration>
+            <property>
+               <name>mapred.mapper.new-api</name>
+               <value>true</value>
+            </property>
+            <property>
+               <name>mapred.reducer.new-api</name>
+               <value>true</value>
+            </property>
+            <property>
+               <name>mapred.job.queue.name</name>
+               <value>default</value>
+            </property>
+            <property>
+               <name>mapreduce.map.class</name>
+               <value>TaxiTimeMapper</value>
+            </property>
+            <property>
+               <name>mapreduce.reduce.class</name>
+               <value>TaxiTimeReducer</value>
+            </property>
+            <property>
+               <name>mapred.output.key.class</name>
+               <value>org.apache.hadoop.io.Text</value>
+            </property>
+            <property>
+               <name>mapred.output.value.class</name>
+               <value>org.apache.hadoop.io.IntWritable</value>
+            </property>
+            <property>
+               <name>mapred.map.tasks</name>
+               <value>1</value>
+            </property>
+            <property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1987.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1988.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1989.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>			
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1990.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1991.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1992.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1993.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1994.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1995.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1996.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1997.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1998.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1999.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2000.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2001.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2002.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2003.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2004.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2005.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2006.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2007.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+         </configuration>
+      </map-reduce>
+      <ok to=“Map-Reduce3” />
+      <error to="fail" />
+</action>
+
+
+<action name=“Map-Reduce3”>
+      <map-reduce>
+         <job-tracker>${jobTracker}</job-tracker>
+         <name-node>${nameNode}</name-node>
+         <prepare>
+            <delete path="${nameNode}/user/${wf:user()}/output-data/${outputDir}" />
+         </prepare>
+        <configuration>
+            <property>
+               <name>mapred.mapper.new-api</name>
+               <value>true</value>
+            </property>
+            <property>
+               <name>mapred.reducer.new-api</name>
+               <value>true</value>
+            </property>
+            <property>
+               <name>mapred.job.queue.name</name>
+               <value>${queueName}</value>
+            </property>
+            <property>
+               <name>mapreduce.map.class</name>
+               <value>CancellationMapper</value>
+            </property>
+            <property>
+               <name>mapreduce.reduce.class</name>
+               <value>CancellationReducer</value>
+            </property>
+            <property>
+               <name>mapred.output.key.class</name>
+               <value>org.apache.hadoop.io.Text</value>
+            </property>
+            <property>
+               <name>mapred.output.value.class</name>
+               <value>org.apache.hadoop.io.IntWritable</value>
+            </property>
+            <property>
+               <name>mapred.map.tasks</name>
+               <value>1</value>
+            </property>
+            <property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1987.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1988.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1989.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>			
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1990.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1991.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1992.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1993.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1994.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1995.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1996.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1997.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1998.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/1999.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2000.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2001.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>		
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2002.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2003.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>					
+			
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2004.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2005.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2006.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+
+			<property>
+				<name>mapred.input.dir</name>
+				<value>/usr/local/hadoop/etc/hadoop/input/2007.csv</value>
+			</property>
+	 
+			<property>
+				<name>mapred.output.dir</name>
+				<value>/user/${wf:user()}/${examplesRoot}/output-data/${outputDir}</value>
+			</property>
+         </configuration>
+      </map-reduce>
+      <ok to="end" />
+      <error to="fail" />
+   </action>
+
+
+   <kill name="fail">
+      <message>Map or Reduce Process Failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+   </kill>
+   <end name="end" />
+</workflow-app>

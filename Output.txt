@@ -1,0 +1,48 @@
+Probability
+Highest probability of airlines on schedukle are:
+
+HA	0.749427462307700
+AQ	0.6210604358056502
+DH	0.6090783774917556	
+
+
+Lowest probability of airlines on schedule are:
+
+PI	0.32256523210604307
+PS	0.41777554942705650
+HP	0.4522454783774917
+	
+
+
+Taxi-in 
+
+Airports with Longest Taxi-in Time are:
+CKB	183.7878657576578
+LNY	88.01384083044982
+MTH	14.67855657657657
+
+Airports with Shortest Taxi-in Time are:	
+BFF	2.0
+PVU	2.5
+DUT	2.546100519930677
+
+
+Taxi-out
+
+Airports with Longest Taxi-out Time are:
+
+ACK	42.67589073059361
+SOP	26.157675366624606
+BQN	15.006876541861882
+
+Airports with Shortest Taxi-out Time are:	
+
+MKK	5.510416666666667
+KSM	7.132375126903553
+VIS	8.565670332996972
+
+Cancellations
+
+Most Number of cancellations:
+The reason for cancellation is:	 CARRIER	317868
+
